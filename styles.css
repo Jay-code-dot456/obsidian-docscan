@@ -1,0 +1,73 @@
+.docscan-modal {
+  width: 96vw;
+  height: 92vh;
+  max-width: 1000px;
+}
+
+.docscan-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  height: 100%;
+}
+
+.docscan-stage {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: none; /* 关键：阻止拖角时页面滚动/缩放 */
+  overflow: hidden;
+}
+
+.docscan-img {
+  display: block;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.docscan-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  touch-action: none;
+}
+
+.docscan-poly {
+  fill: rgba(80, 160, 255, 0.12);
+  stroke: var(--interactive-accent, #5a9cff);
+}
+
+.docscan-handle {
+  fill: rgba(90, 156, 255, 0.35);
+  stroke: #fff;
+  cursor: grab;
+}
+
+.docscan-handle.active {
+  fill: var(--interactive-accent, #5a9cff);
+}
+
+.docscan-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 4px 2px 2px;
+}
+
+.docscan-spacer {
+  flex: 1;
+}
+
+.docscan-hint {
+  color: var(--text-muted);
+  font-size: 0.85em;
+}
+
+.docscan-toolbar button {
+  min-height: 40px;
+  padding: 0 18px;
+}

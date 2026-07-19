@@ -1,0 +1,10 @@
+{
+  "id": "docscan",
+  "name": "文档扫描 DocScan",
+  "version": "0.1.0",
+  "minAppVersion": "1.4.0",
+  "description": "拍照后手动框选四角，透视矫正拉平并存入 Obsidian。移动端优先，零依赖。",
+  "author": "Ethan Lew",
+  "authorUrl": "",
+  "isDesktopOnly": false
+}
