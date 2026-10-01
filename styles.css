@@ -13,13 +13,17 @@
 }
 
 .docscan-stage {
-  position: relative;
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   touch-action: none; /* 关键：阻止拖角时页面滚动/缩放 */
   overflow: hidden;
+}
+
+.docscan-frame {
+  position: relative; /* SVG 叠加以此为定位基准，确保与图片像素对齐 */
+  flex: 0 0 auto;
 }
 
 .docscan-img {

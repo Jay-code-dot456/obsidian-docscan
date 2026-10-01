@@ -90,14 +90,16 @@ class ScanEditorModal extends Modal {
     this.displayScale = disp.w / srcW;
 
     const stage = contentEl.createDiv('docscan-stage');
-    stage.style.width = disp.w + 'px';
-    stage.style.height = disp.h + 'px';
+    // 定位容器：尺寸精确等于显示尺寸，让图片与 SVG 叠加共享同一个盒子（避免错位）
+    const frame = stage.createDiv('docscan-frame');
+    frame.style.width = disp.w + 'px';
+    frame.style.height = disp.h + 'px';
 
     // 源图作为背景（CSS 缩放显示，像素数据不变，供后续采样）
     this.src.classList.add('docscan-img');
     this.src.style.width = disp.w + 'px';
     this.src.style.height = disp.h + 'px';
-    stage.appendChild(this.src);
+    frame.appendChild(this.src);
 
     // 叠加 SVG：viewBox 用源图坐标，句柄直接用源坐标放置
     const ns = 'http://www.w3.org/2000/svg';
@@ -106,7 +108,7 @@ class ScanEditorModal extends Modal {
     svg.setAttribute('class', 'docscan-overlay');
     svg.style.width = disp.w + 'px';
     svg.style.height = disp.h + 'px';
-    stage.appendChild(svg);
+    frame.appendChild(svg);
     this.svg = svg;
 
     const poly = document.createElementNS(ns, 'polygon');
